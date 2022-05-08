@@ -20,7 +20,7 @@ $row = $result->fetch_assoc();
 $v = $row["Views"];
 $v++;
 $sqlv = "UPDATE blog SET Views='$v' WHERE ID=$ID";
-$conn->query($sql);
+$conn->query($sqlv);
 ?>
 <!--- blog single section start --->
 <div class="ms_blog_single_wrapper">
@@ -102,7 +102,7 @@ $conn->query($sql);
                     <h2 class="widget-title">Best Posts</h2>
                     <ul>
                         <?php
-                        $sqllm = "SELECT * FROM blog ORDER BY Views ASC LIMIT 4";
+                        $sqllm = "SELECT * FROM blog ORDER BY Views DESC LIMIT 4";
                         $resulttm = $conn->query($sqllm);
                         $conn->close();
                         if ($resulttm->num_rows > 0) {

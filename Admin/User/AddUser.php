@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sqls = "SELECT * FROM artist WHERE '$Name' = UserName";
+$sqls = "SELECT * FROM user WHERE '$UserName' = UserName";
 $result = $conn->query($sqls);
 if ($result->num_rows > 0) {
     $_SESSION["UserAdd"] = "This data was saved in data base";
